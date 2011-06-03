@@ -1,0 +1,11 @@
+# git
+alias g="git"
+
+# filesystem
+alias ..="cd ../"
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias la="ls -al"
+alias o=$EDITOR
+alias dotf="cd $HOME/.dotfiles"
+alias t="todo.sh"
