@@ -1,0 +1,48 @@
+[user]
+  name = <%= name %>
+  email = <%= email %>
+[github]
+  user  = <%= github_user %>
+  token = <%= github_token %>
+[alias]
+  co = checkout
+  ci = commit
+  rb = rebase
+  br = branch
+  st = status
+  br = branch
+  df = diff
+  lg = log -p
+  pub = "!f() { git push -u ${1:-origin} `git symbolic-ref HEAD`; }; f"
+
+[color]
+  ui = auto
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+
+[color]
+  ui = true
+[color "diff"]
+  whitespace = red reverse
+[core]
+  whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+  excludesfile = ~/.gitignore
+[apply]
+    whitespace = fix
+[difftool]
+	prompt = false
+[diff]
+	tool = opendiff
+[branch]
+	autosetupmerge = true

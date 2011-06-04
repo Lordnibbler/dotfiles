@@ -1,0 +1,2 @@
+#!/bin/sh
+git status -s | grep '^.*[M|A]' | awk '{print $2}' | xargs -n1 sed -i '' 's/[[:space:]]*$//'

@@ -1,0 +1,10 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    erubis (2.7.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  erubis

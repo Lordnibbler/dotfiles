@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+LATEST = `curl http://build.chromium.org/f/chromium/snapshots/chromium-rel-mac/LATEST`.chomp
+
+`cd /tmp; wget http://build.chromium.org/f/chromium/snapshots/chromium-rel-mac/#{LATEST}/chrome-mac.zip`
+`unzip /tmp/chrome-mac.zip`
+`mv /tmp/chrome-mac/Chromium.app /Applications/.`
+`rm /tmp/chrome-mac.zip && rm -rf /tmp/chrome-mac`
