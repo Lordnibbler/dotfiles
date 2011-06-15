@@ -1,8 +1,8 @@
-home/vim/tmp/*
-home/vim/yankring_history*
-home/!vim/tmp/.gitempty
-home/vim/.netrwhist
-home/irssi/config
-home/gitconfig
-home/gemrc
+home/.vim/tmp/*
+home/.vim/yankring_history*
+home/!.vim/tmp/.gitempty
+home/.vim/.netrwhist
+home/.irssi/config
+home/.gitconfig
+home/.gemrc
 config.yml
