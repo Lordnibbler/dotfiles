@@ -1,5 +1,5 @@
-export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
 export LC_CTYPE='en_US.UTF-8'
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
 export RUBY_HEAP_MIN_SLOTS=250000
 export RUBY_HEAP_SLOTS_INCREMENT=250000
 export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
@@ -36,7 +36,7 @@ fi
 
 # Am I coming in via SSH and have tmux?
 # Then start a new session or reattach, and detach the other process
-if [[ $PLATFORM != "Darwin" && -z $TMUX  && -n $SSH_TTY ]]; then
+if [[ -z $TMUX  && -n $SSH_TTY && ! -f $HOME/.notmux ]]; then
   if type tmux &>/dev/null >&2; then
     tmux -2 attach -d || tmux -2;
     exit
