@@ -185,9 +185,13 @@ statusbar = {
   };
 };
 settings = {
-  core = { real_name = ""; user_name = "<%= irc_nick %>"; nick = "<%= irc_nick %>"; };
-  "prowl_api_key" = "<%= prowl_api_key %>";
+  core = { real_name = "<%= irc_username %>"; user_name = "<%= irc_username %>"; nick = "<%= irc_nick %>"; };
   "fe-text" = { actlist_sort = "refnum"; };
   "fe-common/core" = { theme = "solarish"; };
+  "perl/core/scripts" = {
+    prowl_api_key = "<%= prowl_api_key%>";
+    prowl_enabled = "yes";
+    autoaway_timeout = "1800";
+  };
 };
 ignores = ( { level = "JOINS PARTS QUITS NICKS"; } );
