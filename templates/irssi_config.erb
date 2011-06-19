@@ -187,7 +187,11 @@ statusbar = {
 settings = {
   core = { real_name = "<%= irc_username %>"; user_name = "<%= irc_username %>"; nick = "<%= irc_nick %>"; };
   "fe-text" = { actlist_sort = "refnum"; };
-  "fe-common/core" = { theme = "solarish"; };
+  "fe-common/core" = {
+    theme = "solarish";
+    autolog_path = "~/irclogs/$tag/$0.%Y-%m-%d.log";
+    autolog = "yes";
+  };
   "perl/core/scripts" = {
     prowl_api_key = "<%= prowl_api_key%>";
     prowl_enabled = "yes";
