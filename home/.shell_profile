@@ -42,5 +42,6 @@ if [[ -z $TMUX  && -n $SSH_TTY && ! -f $HOME/.notmux ]]; then
     exit
   fi
 elif [[ -n $TMUX ]]; then
+  if type reattach-to-user-namespace >/dev/null; then reattach-to-user-namespace -l zsh; fi;
   export TERM=screen-256color;
 fi
