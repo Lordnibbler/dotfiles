@@ -12,9 +12,21 @@
   st = status
   br = branch
   df = diff
-  lg = log -p
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   pub = "!f() { git push -u ${1:-origin} `git symbolic-ref HEAD`; }; f"
-
+  current-branch = rev-parse --symbolic-full-name --abbrev-ref HEAD
+  shove = "!f() { H=$(git current-branch) && git push -u origin $H; }; f"
+  ancestor       = !bash -c 'diff --old-line-format= --new-line-format= <(git rev-list --first-parent \"${1:-master}\") <(git rev-list --first-parent \"${2:-HEAD}\") | head -1' -
+  last = log -n
+  current-branch = rev-parse --symbolic-full-name --abbrev-ref HEAD
+  current-remote = "!f() { B=$(git config branch.$(git current-branch).remote) && echo ${B/./refs/heads}; }; f"
+  current-merge  = "!f() { B=$(git config branch.$(git current-branch).merge) && echo ${B#refs/heads/}; }; f"
+  current-track  = "!f() { R=$(git current-remote) && M=$(git current-merge) && echo ${R}/${M}; }; f"
+  incoming       = "!f() { T=$( [ \"${1}\" == \"\" ] && echo $(git current-track) || echo ${1} ) && git log ..${T} $@; }; f"
+  outgoing       = "!f() { T=$( [ \"${1}\" == \"\" ] && echo $(git current-track) || echo ${1} ) && git log ${T}.. $@; }; f"
+  recommit       = commit --amend -CHEAD
+  reci           = commit --amend -CHEAD
+  staged         = diff --cached
 [color]
   ui = auto
 [color "branch"]
@@ -37,12 +49,26 @@
   whitespace = red reverse
 [core]
   whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
-  excludesfile = ~/.gitignore
+  excludesfile = /Users/meowingtons/.gitignore
 [apply]
     whitespace = fix
-[difftool]
-	prompt = false
-[diff]
-	tool = opendiff
 [branch]
-	autosetupmerge = true
+  autosetupmerge = always
+  autosetuprebase = always
+[push]
+  default = upstream
+[rerere]
+  enabled = true
+[difftool "Kaleidoscope"]
+  cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[diff]
+  tool = Kaleidoscope
+[difftool]
+  prompt = false
+[mergetool "Kaleidoscope"]
+  cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+  trustExitCode = true
+[mergetool]
+  prompt = false
+[merge]
+  tool = Kaleidoscope
