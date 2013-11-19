@@ -12,11 +12,12 @@
   st = status
   br = branch
   df = diff
+  cp = cherry-pick
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   pub = "!f() { git push -u ${1:-origin} `git symbolic-ref HEAD`; }; f"
   current-branch = rev-parse --symbolic-full-name --abbrev-ref HEAD
   shove = "!f() { H=$(git current-branch) && git push -u origin $H; }; f"
-  ancestor       = !bash -c 'diff --old-line-format= --new-line-format= <(git rev-list --first-parent \"${1:-master}\") <(git rev-list --first-parent \"${2:-HEAD}\") | head -1' -
+	ancestor       = !bash -c 'diff --old-line-format= --new-line-format= <(git rev-list --first-parent \"${1:-master}\") <(git rev-list --first-parent \"${2:-HEAD}\") | head -1' -
   last = log -n
   current-branch = rev-parse --symbolic-full-name --abbrev-ref HEAD
   current-remote = "!f() { B=$(git config branch.$(git current-branch).remote) && echo ${B/./refs/heads}; }; f"
@@ -60,15 +61,16 @@
 [rerere]
   enabled = true
 [difftool "Kaleidoscope"]
-  cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 [diff]
-  tool = Kaleidoscope
+	tool = Kaleidoscope
 [difftool]
-  prompt = false
+	prompt = false
 [mergetool "Kaleidoscope"]
-  cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-  trustExitCode = true
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustExitCode = true
 [mergetool]
-  prompt = false
+	prompt = false
 [merge]
-  tool = Kaleidoscope
+	tool = Kaleidoscope
+
