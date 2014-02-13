@@ -1,0 +1,30 @@
+# ~/.tmuxinator/boombotix.yml
+
+name: boombotix
+root: ~/Code/rails/boombotix
+pre: # Runs before everything
+pre_window: rbenv shell 2.1.0 # Runs in each tab and pane
+tmux_options: # Pass arguments to tmux
+windows:
+  - main:
+      pre:
+        - # I get run in each pane, before each pane command
+      layout: even-horizontal
+      panes:
+        - git st
+        - #
+  - server:
+      layout: even-vertical
+      panes:
+        - rake jobs:work
+        - bundle && rails s
+
+  - console: rails c
+  - database: rails db
+  - guard: guard -P livereload
+  - logs: tail -f log/development.log
+  - "heroku logs":
+      layout: even-vertical
+      panes:
+        - heroku logs -t -a boombotix
+        - heroku logs -p worker -t -a boombotix
