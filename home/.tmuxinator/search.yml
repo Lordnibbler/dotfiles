@@ -1,0 +1,24 @@
+# ~/.tmuxinator/search.yml
+
+name: Search
+root: ~/Code/onelogin/search
+pre: # Runs before everything
+pre_window: # Runs in each tab and pane
+tmux_options: # Pass arguments to tmux
+windows:
+  - main:
+      pre:
+        - # run before everything
+      layout: even-vertical
+      panes:
+        - git st
+        - #
+  - server: npm start
+  - tests: npm test
+  - ssh:
+  - staging_shadow_logs:
+      layout: even-vertical
+      panes:
+        - ssh -A deploy@url.com "tail -f -n 500 /etc/sv/cloud_search/log/main/current"
+        - ssh -A deploy@url.com "tail -f -n 500 /etc/sv/cloud_search/log/main/current"
+  - prod_logs: ssh -A deploy@url.com   "tail -f -n 500 /etc/sv/cloud_search/log/main/current"

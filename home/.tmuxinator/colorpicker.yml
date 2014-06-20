@@ -1,0 +1,29 @@
+# ~/.tmuxinator/boombotix.yml
+
+name: colorpicker
+root: ~/Code/leds/colorpicker-server
+pre: # Runs before everything
+pre_window: rbenv shell 2.1.2 # Runs in each tab and pane
+tmux_options: # Pass arguments to tmux
+windows:
+  - server:
+      pre:
+        - cd ~/Code/leds/colorpicker-server
+      layout: even-vertical
+      panes:
+        - git st
+        -
+  - server_tests:
+      pre:
+        - cd ~/Code/leds/colorpicker-server
+      layout: even-vertical
+      panes:
+        - npm test
+        -
+  - beaglebone:
+      pre:
+        - cd ~/Code/leds/colorpicker-beaglebone
+      layout: even-vertical
+      panes:
+        -
+        -

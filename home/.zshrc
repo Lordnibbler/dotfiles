@@ -36,3 +36,11 @@ PATH=./.bundle/bin:$PATH
 
 # tmuxinator
 source ~/.bin/tmuxinator.zsh
+
+PATH="$PATH:/usr/local/share/npm/bin/"
+
+# added by travis gem
+[ -f /Users/meowingtons/.travis/travis.sh ] && source /Users/meowingtons/.travis/travis.sh
+
+# Add rails 4 project-specific binstubs to PATH
+PATH="./bin:$PATH"
