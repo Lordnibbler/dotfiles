@@ -1,7 +1,9 @@
 --type-add=ruby=.haml,.rake,.rsel,.builder
---type-add=html=.html.erb,.html.haml
+--type-add=html=.html.erb,.html.haml,.mustache,.hbs,.dust
 --type-add=js=.js.erb
---type-add=css=.sass,.scss,.less
+--type-add=js=.json
+--type-add=js=.coffee
+--type-add=css=.sass,.scss,.less,.css.scss
 --type-set=cucumber=.feature
 --type-set=coffeescript=.coffee
 --ignore-dir=vendor
@@ -9,6 +11,9 @@
 --ignore-dir=tmp
 --ignore-dir=doc
 --ignore-dir=coverage
+--ignore-dir=.sass-cache
+--ignore-dir=.yardoc
 --sort-files
 --color
 --follow
+--smart-case
