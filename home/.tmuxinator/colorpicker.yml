@@ -1,4 +1,4 @@
-# ~/.tmuxinator/boombotix.yml
+# ~/.tmuxinator/colorpicker.yml
 
 name: colorpicker
 root: ~/Code/leds/colorpicker-server
@@ -11,15 +11,15 @@ windows:
         - cd ~/Code/leds/colorpicker-server
       layout: even-vertical
       panes:
-        - git st
         -
+        - npm start
   - server_tests:
       pre:
         - cd ~/Code/leds/colorpicker-server
       layout: even-vertical
       panes:
         - npm test
-        -
+        - redis-server
   - beaglebone:
       pre:
         - cd ~/Code/leds/colorpicker-beaglebone
