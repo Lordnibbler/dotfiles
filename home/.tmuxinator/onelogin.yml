@@ -50,12 +50,13 @@ windows:
         - redis-server
   - ssm: cd ~/Code/onelogin/onelogin-ssm
   - api:
-      pre: cd ~/Code/onelogin/onelogin-apis
-        - rbenv shell 2.1.1
+      pre:
+        - cd ~/Code/onelogin/onelogin-apis
+        - rbenv shell 2.1.2
       layout: even-vertical
       panes:
         - git st
-        - bundle; rails s -p 3003
+        - bundle; rails s -p 3004
   - idp_client:
       pre:
         - rbenv shell 2.1.2
@@ -77,7 +78,7 @@ windows:
       pre: rbenv shell 1.8.7-p375
       layout: even-horizontal
       panes:
-        -
-        -
+        - 
+        - 
   - docs: cd ~/Code/onelogin/onelogin_doc
   - dup: cd ~/Code/onelogin/onelogin.com-dup
