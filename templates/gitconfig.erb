@@ -13,6 +13,8 @@
   br = branch
   df = diff
   cp = cherry-pick
+  fp = push -f
+  fuckit = push -f
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   pub = "!f() { git push -u ${1:-origin} `git symbolic-ref HEAD`; }; f"
   current-branch = rev-parse --symbolic-full-name --abbrev-ref HEAD
@@ -28,6 +30,8 @@
   recommit       = commit --amend -CHEAD
   reci           = commit --amend -CHEAD
   staged         = diff --cached
+  pp             = pull --prune
+  cleanup = "!git branch --merged | grep  -v '\\*\\|master\\|develop\\|master_newui' | xargs -n 1 git branch -d"
 [color]
   ui = auto
 [color "branch"]
