@@ -1,3 +1,0 @@
-[submodule "home/.vim"]
-	path = home/.vim
-	url = git@github.com:mdp/janus.git

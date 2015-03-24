@@ -1,0 +1,1 @@
+. $HOME/.shell_profile
