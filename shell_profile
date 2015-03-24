@@ -1,0 +1,59 @@
+export LC_CTYPE='en_US.UTF-8'
+export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
+export PLATFORM=`uname`
+export TERM=xterm-256color
+export LS_COLORS='no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:bd=40;33;01:cd=40;33;01:or=01;05;37;41:mi=01;05;37;41:ex=01;32:*.cmd=01;32:*.exe=01;32:*.com=01;32:*.btm=01;32:*.bat=01;32:*.sh=01;32:*.csh=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.gz=01;31:*.bz2=01;31:*.bz=01;31:*.tz=01;31:*.rpm=01;31:*.cpio=01;31:*.jpg=01;35:*.gif=01;35:*.bmp=01;35:*.xbm=01;35:*.xpm=01;35:*.png=01;35:*.tif=01;35:'
+export CLICOLOR=1
+export EDITOR=vim
+
+# Less with line numbers automatically
+export LESS="-N"
+
+# if local .bin, add the path
+# Not super secure, but meh
+if [ -d $HOME/bin ]; then
+   export PATH=$HOME/bin:$PATH
+fi
+
+# Allow for golang
+if [ -d /usr/local/go/bin ]; then
+  export PATH="$PATH:/usr/local/go/bin"
+fi
+
+# if local .rbenv, add the path
+if [ -d $HOME/.rbenv ]; then
+   export PATH=$HOME/.rbenv/bin:$PATH
+   eval "$(rbenv init -)"
+fi
+
+source $HOME/.aliasrc
+
+# Allow for nvm
+if [ -f $HOME/.nvm/nvm.sh ]; then
+  source ~/.nvm/nvm.sh
+fi
+
+# Allow for heroku
+if [ -d /usr/local/heroku/bin ]; then
+  export PATH="$PATH:/usr/local/heroku/bin"
+fi
+
+# Allow for local customizations
+if [ -f $HOME/.local.sh ]; then
+  source $HOME/.local.sh
+fi
+
+# start ssh-agent
+export SSH_AUTH_STATIC=~/.ssh/ssh-agent-static
+# Test to see that it's linked to an existing socket
+if [[ -e $SSH_AUTH_SOCK && -z $TMUX ]]; then
+  ln -sf $SSH_AUTH_SOCK $SSH_AUTH_STATIC
+fi
+
+if [[ -n $TMUX ]]; then
+  export TERM=screen-256color;
+fi
+
+# Gisty settings
+export GISTY_ACCESS_TOKEN=`git config --global github.gist-oauth-token`
+export GISTY_DIR=~/src/gists

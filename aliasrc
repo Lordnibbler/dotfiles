@@ -1,0 +1,22 @@
+# git
+alias g="git"
+
+# filesystem
+alias ..="cd ../"
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias ls='ls --color=auto'
+alias la="ls -al"
+alias o=$EDITOR
+alias dotf="cd $HOME/.dotfiles"
+alias t="todo.sh"
+
+# PostGres Mac
+alias pgstart="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
+alias pgstop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
+
+# Ruby Bundler
+alias be="bundle exec"
+
+# Mosh mouse support
+alias moshm="perl -E ' print \"\e[?1005h\e[?1002h\" ' && mosh"

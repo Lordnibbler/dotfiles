@@ -1,9 +1,9 @@
 [user]
-  name = <%= name %>
-  email = <%= email %>
+  name = Ben Radler
+  email = benradler@me.com
 [github]
-  user  = <%= github_user %>
-  token = <%= github_token %>
+  user  = lordnibbler
+  token = GithubToken
 [alias]
   co = checkout
   ci = commit
@@ -19,7 +19,7 @@
   pub = "!f() { git push -u ${1:-origin} `git symbolic-ref HEAD`; }; f"
   current-branch = rev-parse --symbolic-full-name --abbrev-ref HEAD
   shove = "!f() { H=$(git current-branch) && git push -u origin $H; }; f"
-  ancestor       = !bash -c 'diff --old-line-format= --new-line-format= <(git rev-list --first-parent \"${1:-master}\") <(git rev-list --first-parent \"${2:-HEAD}\") | head -1' -
+  ancestor = !bash -c 'diff --old-line-format= --new-line-format= <(git rev-list --first-parent \"${1:-master}\") <(git rev-list --first-parent \"${2:-HEAD}\") | head -1' -
   last = log -n
   current-branch = rev-parse --symbolic-full-name --abbrev-ref HEAD
   current-remote = "!f() { B=$(git config branch.$(git current-branch).remote) && echo ${B/./refs/heads}; }; f"
@@ -47,7 +47,6 @@
   added = yellow
   changed = green
   untracked = cyan
-
 [color]
   ui = true
 [color "diff"]

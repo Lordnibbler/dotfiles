@@ -13,7 +13,11 @@
 --ignore-dir=coverage
 --ignore-dir=.sass-cache
 --ignore-dir=.yardoc
+--ignore-dir=dist
 --sort-files
 --color
 --follow
 --smart-case
+--ignore-file=is:staging_connectors.sql
+--ignore-file=is:brakeman.ignore
+--ignore-file=is:newrelic_agent.log
