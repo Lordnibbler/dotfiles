@@ -10,6 +10,9 @@ I recommend placing this dotfiles directory in your home directory as well for e
 git clone git@github.com:Lordnibbler/dotfiles.git ~/.dotfiles
 ./.install.sh
 
+# Update .gitconfig with your github username, otherwise you will be committing as me!
+vi ~/.gitconfig
+
 # ???
 # Profit
 ```
