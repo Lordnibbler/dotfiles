@@ -2,7 +2,7 @@
 source ~/.config/fish/nvm-wrapper/nvm.fish
 
 # If you don't want to run the head version of rbenv, uncomment this line
-set paradox_old_rbenv true
+# set paradox_old_rbenv true
 #
 # Fish colors and escape codes
 set fish_color_autosuggestion 808080
@@ -174,36 +174,7 @@ function fish_prompt --description 'Write out the prompt'
 
   end
 
-  set -l prompt_status
-  if test $last_status -ne 0
-    if not set -q __paradox_prompt_status
-      set -g __paradox_prompt_status (set_color $fish_color_status)
-    end
-    set prompt_status "$__paradox_prompt_status [$last_status]$__paradox_prompt_normal"
-  end
-
-  if not set -q __paradox_prompt_command_count
-    set -g __paradox_prompt_command_count 1
-  end
-
-  # Separator & Prompt
-  set -l prompt_separator_color
-  if test $last_status -ne 0
-    set prompt_separator_color (set_color red)
-  else
-    set prompt_separator_color (set_color green)
-  end
-  if set -q __paradox_prompt
-    set -l prompt_command_count "━┫$__paradox_prompt_command_count┣"
-    set -l prompt_command_count_width (echo $prompt_command_count | command wc -m ^/dev/null)
-    set -l prompt_separator_width (math $COLUMNS - $prompt_command_count_width)
-    set -l prompt_separator_characters (command jot -b "━" -s "" $prompt_separator_width ^/dev/null)
-    echo -s $prompt_separator_color $prompt_command_count $prompt_separator_characters
-  end
-  echo -s "$__paradox_prompt_cwd" (prompt_pwd) (__fish_git_prompt) (set_color 00adeb) (__paradox_git_hash) "$__paradox_prompt_normal" "$prompt_status \$ "
-  # echo -s "$__paradox_prompt_delim"
-  # set -g __paradox_prompt 1
-  set -g __paradox_prompt_command_count (math $__paradox_prompt_command_count + 1)
+  echo -s "$__paradox_prompt_cwd" (prompt_pwd) (__fish_git_prompt) (set_color 00adeb) (__paradox_git_hash) "$__paradox_prompt_normal" "$prompt_status" " $__paradox_prompt_delim"
 end
 
 # initialize our new variables
