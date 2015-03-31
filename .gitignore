@@ -1,2 +1,5 @@
 # ignore sensitive hub configuration
 config/hub
+
+# ignore fish history
+config/fish/fish*
