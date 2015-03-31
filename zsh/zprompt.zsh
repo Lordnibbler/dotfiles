@@ -13,10 +13,8 @@ chpwd_functions+='chpwd_update_git_vars'
 
 # Set the prompt.
 if [ -n $__RVM_AVAILABLE ]; then
-  RPROMPT=$'%{${fg[yellow]}%}($(rvm_prompt))%{${fg[default]}%}'
+  RPROMPT=$'%{${fg[yellow]}%}($(rbenv version-name))%{${fg[default]}%}'
 fi
-
-PROMPT=$'%{${fg[cyan]}%}%B%~%b$(prompt_git_info)%{${fg[default]}%} '
 
 if [ -s ~/.zsh/plugins/vi_prompt.zsh ]; then
   source ~/.zsh/plugins/vi_prompt.zsh

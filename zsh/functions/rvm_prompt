@@ -1,4 +1,0 @@
-if [ -s ~/.rvm/bin/rvm-prompt ] ; then
-  __RVM_AVAILABLE=1
-  echo `~/.rvm/bin/rvm-prompt i v`
-fi
