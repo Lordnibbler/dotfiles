@@ -1,3 +1,6 @@
+# nvm-wrapper
+source ~/.config/fish/nvm-wrapper/nvm.fish
+
 # If you don't want to run the head version of rbenv, uncomment this line
 set paradox_old_rbenv true
 #
@@ -61,6 +64,15 @@ if not set -q paradox_old_rbenv
   # NOTE: This is only in HEAD of rbenv as of this date (2014/09/02)
   . (rbenv init -|psub)
 end
+
+# add binaries in ./bundle to $PATH, eliminating need for bundle exec
+set PATH ./.bundle/bin $PATH
+
+# Add rails 4 project-specific binstubs to $PATH
+set PATH ./bin $PATH
+
+# add the NPM binaries to $PATH
+set PATH $PATH /usr/local/share/npm/bin/
 
 # Set my editors to Sublime Text 2
 # setenv EDITOR "atom -w"
