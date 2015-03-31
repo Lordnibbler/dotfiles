@@ -35,7 +35,7 @@ PATH=./.bundle/bin:$PATH
 PATH="./bin:$PATH"
 
 # tmuxinator
-source ~/.bin/tmuxinator.zsh
+# source ~/.bin/tmuxinator.zsh
 
 # add the NPM binaries to $PATH
 PATH="$PATH:/usr/local/share/npm/bin/"
