@@ -5,6 +5,7 @@
   user  = lordnibbler
   token = GithubToken
 [alias]
+  # basic aliases
   co = checkout
   ci = commit
   rb = rebase
@@ -14,24 +15,53 @@
   df = diff
   cp = cherry-pick
   fp = push -f
-  fuckit = push -f
-  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-  pub = "!f() { git push -u ${1:-origin} `git symbolic-ref HEAD`; }; f"
+  recommit = commit --amend -CHEAD
+  reci = commit --amend -CHEAD
+  staged  = diff --cached
+  pp = pull --prune
+
+  # shows the current git branch
   current-branch = rev-parse --symbolic-full-name --abbrev-ref HEAD
+
+  # set current branch to the upstream, and creates it on the remote
   shove = "!f() { H=$(git current-branch) && git push -u origin $H; }; f"
+
+  # pretty log
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+
+  # grep
+  g = grep --break --heading --line-number
+
+  # grep everything
+  gg ="!f() { git rev-list --all | xargs git grep $1; }; f"
+
+  # sets upstream to your current symbolic-ref (HEAD)
+  pub = "!f() { git push -u ${1:-origin} `git symbolic-ref HEAD`; }; f"
+
+  # shows the first parent
   ancestor = !bash -c 'diff --old-line-format= --new-line-format= <(git rev-list --first-parent \"${1:-master}\") <(git rev-list --first-parent \"${2:-HEAD}\") | head -1' -
+
+  # show the last n commits
   last = log -n
-  current-branch = rev-parse --symbolic-full-name --abbrev-ref HEAD
+
   current-remote = "!f() { B=$(git config branch.$(git current-branch).remote) && echo ${B/./refs/heads}; }; f"
   current-merge  = "!f() { B=$(git config branch.$(git current-branch).merge) && echo ${B#refs/heads/}; }; f"
   current-track  = "!f() { R=$(git current-remote) && M=$(git current-merge) && echo ${R}/${M}; }; f"
-  incoming       = "!f() { T=$( [ \"${1}\" == \"\" ] && echo $(git current-track) || echo ${1} ) && git log ..${T} $@; }; f"
-  outgoing       = "!f() { T=$( [ \"${1}\" == \"\" ] && echo $(git current-track) || echo ${1} ) && git log ${T}.. $@; }; f"
-  recommit       = commit --amend -CHEAD
-  reci           = commit --amend -CHEAD
-  staged         = diff --cached
-  pp             = pull --prune
+
+  incoming = "!f() { T=$( [ \"${1}\" == \"\" ] && echo $(git current-track) || echo ${1} ) && git log ..${T} $@; }; f"
+  outgoing = "!f() { T=$( [ \"${1}\" == \"\" ] && echo $(git current-track) || echo ${1} ) && git log ${T}.. $@; }; f"
+
+  # delete all local branches merged into master, develop, master_newui
   cleanup = "!git branch --merged | grep  -v '\\*\\|master\\|develop\\|master_newui' | xargs -n 1 git branch -d"
+
+  # list branches not merged into currently checked out branch
+  wip = branch --no-merged
+
+  # list branches merged into currently checked out branch
+  done = branch --merged
+
+  # Hub gem
+  pr = pull-request
 [color]
   ui = auto
 [color "branch"]
