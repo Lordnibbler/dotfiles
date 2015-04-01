@@ -72,7 +72,7 @@ set PATH ./.bundle/bin $PATH
 set PATH ./bin $PATH
 
 # add the NPM binaries to $PATH
-set PATH $PATH /usr/local/share/npm/bin/
+set PATH $PATH /usr/local/share/npm/bin
 
 # Set my editors to Sublime Text 2
 # setenv EDITOR "atom -w"
