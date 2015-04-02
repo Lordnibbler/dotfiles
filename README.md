@@ -50,7 +50,14 @@ Fish and nvm (node version manager) don't play nice as of now.  To work around t
 
 ### ZSH
 
-If you plan to use ZSH, I install [oh my zsh](https://github.com/robbyrussell/oh-my-zsh#basic-installation), as my `.zshrc` already has this configured.
+1. Install ZSH
+
+  ```sh
+  brew update; brew install zsh
+  ```
+
+2. Install [oh my zsh](https://github.com/robbyrussell/oh-my-zsh#basic-installation)
+If you plan to use ZSH, I install oh my zsh as my `.zshrc` already has this configured.
 
 ### Forking
 
