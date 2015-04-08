@@ -91,8 +91,10 @@ set -g __fish_git_prompt_color_upstream_behind violet
 set -g __fish_git_prompt_color_cleanstate green --bold
 
 # Alias zone
+
 # Rehash fish configs quickly
 alias reload '. ~/.config/fish/config.fish'
+
 # Git
 # Hub is a useful tool that provides github integration. If you don't use it, I recommend deleting these lines
 alias git hub
@@ -104,6 +106,12 @@ alias b "bundle"
 alias bx "bundle exec"
 alias rk "rake"
 alias rb "ruby"
+
+# Shell/filesystem
+alias .. "cd ../"
+alias ... "cd ../../"
+alias .... "cd ../../../"
+alias dotf "cd $HOME/.dotfiles"
 
 # Run something in the latest version of ruby
 alias rbl "env RBENV_VERSION=latest "
