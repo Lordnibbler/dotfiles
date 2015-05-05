@@ -116,6 +116,10 @@ alias dotf "cd $HOME/.dotfiles"
 # Run something in the latest version of ruby
 alias rbl "env RBENV_VERSION=latest "
 
+# start/stop postgres (homebrew version)
+alias pgstart "pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
+alias pgstop "pg_ctl -D /usr/local/var/postgres stop -s -m fast"
+
 # Prompt function
 function fish_prompt --description 'Write out the prompt'
 
