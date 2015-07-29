@@ -90,7 +90,7 @@ set -g __fish_git_prompt_color_upstream_ahead red
 set -g __fish_git_prompt_color_upstream_behind violet
 set -g __fish_git_prompt_color_cleanstate green --bold
 
-# Alias zone
+# Aliases
 
 # Rehash fish configs quickly
 alias reload '. ~/.config/fish/config.fish'
@@ -120,75 +120,6 @@ alias rbl "env RBENV_VERSION=latest "
 alias pgstart "pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
 alias pgstop "pg_ctl -D /usr/local/var/postgres stop -s -m fast"
 
-# Prompt function
-function fish_prompt --description 'Write out the prompt'
-
-  set -l last_status $status
-
-  # Just calculate these once, to save a few cycles when displaying the prompt
-  if not set -q __paradox_prompt_normal
-    set -g __paradox_prompt_normal (set_color normal)
-  end
-
-  if not set -q -g __fish_classic_git_functions_defined
-    set -g __fish_classic_git_functions_defined
-
-    function __fish_repaint_status --on-variable fish_color_status --description "Event handler; repaint when fish_color_status changes"
-      if status --is-interactive
-        set -e __paradox_prompt_status
-        commandline -f repaint ^/dev/null
-      end
-    end
-  end
-
-  # Get the current Git commit hash
-  function __paradox_git_hash --description "Get the current git commit hash, if we're in a git working tree"
-    set -l git_info (command git rev-parse --is-inside-work-tree --short HEAD ^/dev/null)
-    if test (count $git_info) -gt 1
-      set -l inside_worktree $git_info[1]
-      set -l git_head $git_info[2]
-      if test "true" = "$inside_worktree"
-        echo -s "[$git_head]"
-      end
-    end
-  end
-
-  function __paradox_command_duration --description "Get the current command duration"
-    if set -q CMD_DURATION
-      echo -s "[⌛️ $CMD_DURATION]"
-    end
-  end
-
-  switch $USER
-
-  case root
-
-    if not set -q __paradox_prompt_cwd
-      if set -q fish_color_cwd_root
-        set -g __paradox_prompt_cwd (set_color $fish_color_cwd_root)
-      else
-        set -g __paradox_prompt_cwd (set_color $fish_color_cwd)
-      end
-    end
-    if not set -q __paradox_prompt_delim
-      set -g __paradox_prompt_delim '! '
-    end
-
-  case '*'
-
-    if not set -q __paradox_prompt_cwd
-      set -g __paradox_prompt_cwd (set_color $fish_color_cwd)
-    end
-
-    if not set -q __paradox_prompt_delim
-      set -g __paradox_prompt_delim '$ '
-    end
-
-  end
-
-  echo -s "$__paradox_prompt_cwd" (prompt_pwd) (__fish_git_prompt) (set_color 00adeb) (__paradox_git_hash) "$__paradox_prompt_normal" "$prompt_status" " $__paradox_prompt_delim"
-end
-
 # initialize our new variables
 # in theory this would be in a fish_prompt event, but this file isn't sourced
 # until the fish_prompt function is called anyway.
@@ -198,10 +129,4 @@ if not set -q __prompt_initialized_2
   set -U fish_color_status red
   set -U fish_color_splitter red
   set -U __prompt_initialized_2
-end
-
-# Right-hand prompt
-function fish_right_prompt
-  set -l rb_version (command ruby -e 'print RUBY_VERSION' ^/dev/null)
-  echo -s (set_color blue) "(💎  $rb_version)" (set_color green) (__paradox_command_duration) (set_color normal)
 end
