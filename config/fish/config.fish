@@ -74,7 +74,7 @@ set PATH ./bin $PATH
 # add the NPM binaries to $PATH
 set PATH $PATH /usr/local/share/npm/bin
 
-# Set my editors to Sublime Text 2
+# Set my editors to Atom
 # setenv EDITOR "atom -w"
 # setenv VISUAL "atom -w"
 # setenv PAGER "most"
@@ -96,10 +96,9 @@ set -g __fish_git_prompt_color_cleanstate green --bold
 alias reload '. ~/.config/fish/config.fish'
 
 # Git
-# Hub is a useful tool that provides github integration. If you don't use it, I recommend deleting these lines
+# Hub is a useful tool that provides github integration.
 alias git hub
 alias g hub
-alias gst "git status"
 
 # Ruby
 alias b "bundle"
