@@ -1,5 +1,5 @@
-# nvm-wrapper
-source ~/.config/fish/nvm-wrapper/nvm.fish
+# use bass to source the bash nvm script
+bass source ~/.nvm/nvm.sh
 
 # If you don't want to run the head version of rbenv, uncomment this line
 # set paradox_old_rbenv true

@@ -23,14 +23,19 @@ If you plan to use [fish shell](http://fishshell.com/), there are a lot of nice 
 
 Follow these instructions to get Fish set as the default shell:
 
-1. Install Fish (and optionally, nvm)
+1. Install Fish (and optionally, nvm -- you'll need node for my `fish_right_prompt`)
   ```sh
   brew update; brew install fish nvm
   ```
 
-2. Open a completely new terminal session, just to be safe.
+2. Install [`bass`](https://github.com/edc/bass) so you can use bash-specific logic (ie. for nvm)
+  ```sh
+    git clone git@github.com:edc/bass.git
+    cd bass; make install
+    rm -rf bass
+  ```
 
-3. Test fish by typing `fish`
+3. Open a completely new terminal session and launch fish by typing `fish` and pressing enter
 
 4. If you see the following error, you need to upgrade to the `HEAD` version of rbenv for native fish support (this is not available in 0.4.0)
 
@@ -53,20 +58,7 @@ Follow these instructions to get Fish set as the default shell:
 
 6. If you use iTerm2, you can change your color scheme. [Simply download a scheme](https://github.com/mbadolato/iTerm2-Color-Schemes/tree/master/schemes). Then, go to Preferences > Profiles > Colors Tab > Load Presets, and choose a `.itermcolors` file.
 
-6. You can install [oh my fish](https://github.com/bpinto/oh-my-fish) if you don't like my customizations.
-
-#### Fish Caveats
-
-Fish and nvm (node version manager) don't play nice as of now.  To work around this:
-
-1. Install NVM
-  ```sh
-  brew install nvm
-  ```
-
-2. [Install NVM wrapper](https://github.com/passcod/nvm-fish-wrapper) (optional if you want to use Node Version Manager)
-
-3. As of August 15, 2015, you need to [follow the instructions here](https://github.com/passcod/nvm-fish-wrapper/issues/13) in order to get fish and nvm to play nicely with my `fish.config`
+7. *Optionally*, you can install [oh my fish](https://github.com/bpinto/oh-my-fish) if you don't like my customizations.
 
 ### ZSH
 
