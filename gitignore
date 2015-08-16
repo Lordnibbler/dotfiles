@@ -3,5 +3,4 @@
 *.ignore
 *.un~
 *.zshc
-.rbenv-version
 vendor/bundler
