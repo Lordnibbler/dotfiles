@@ -11,7 +11,7 @@ I recommend placing this dotfiles directory in your home directory as well for e
 git clone --recursive git@github.com:Lordnibbler/dotfiles.git ~/.dotfiles
 
 # install the dotfiles symlinks
-~/.dotfiles/.install.sh
+cd ~/.dotfiles && .install.sh
 
 # IMPORTANT: Update .gitconfig with your github username, otherwise you will be committing as me!
 vi ~/.gitconfig
