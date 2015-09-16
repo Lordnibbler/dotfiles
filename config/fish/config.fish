@@ -92,8 +92,8 @@ set -g __fish_git_prompt_color_cleanstate green --bold
 
 # Aliases
 
-# Rehash fish configs quickly
-alias reload '. ~/.config/fish/config.fish'
+# Rehash fish configs quickly - doesn't truly reload, launches a new shell, but results the same
+alias reload 'exec fish -l'
 
 # Git
 # Hub is a useful tool that provides github integration.

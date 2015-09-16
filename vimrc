@@ -62,7 +62,7 @@ com! WP call WordProcessorMode()
 let mapleader = ";" " Leader
 
 " Generic non-plugin specific mappings
-source ~/.vim/mappings.vim
+" source ~/.vim/mappings.vim
 
 " Show line highlight on Normal
 set cursorline
