@@ -3,8 +3,9 @@ bass source ~/.nvm/nvm.sh
 
 # If you don't want to run the head version of rbenv, uncomment this line
 # set paradox_old_rbenv true
-#
+
 # Fish colors and escape codes
+##############################
 set fish_color_autosuggestion 808080
 set fish_color_command green\x1e--bold
 set fish_color_cwd yellow
@@ -51,6 +52,8 @@ function fish_user_key_bindings
 end
 
 # Paths
+#######
+
 # While you can use a single fish array to do this (space-separated list), this is easier to read
 set PATH /usr/local/bin /usr/local/sbin $PATH
 if set -q paradox_old_rbenv
@@ -74,10 +77,17 @@ set PATH ./bin $PATH
 # add the NPM binaries to $PATH
 set PATH $PATH /usr/local/share/npm/bin
 
+# add $GOPATH to $PATH (necessary if you will use golang)
+set -x GOPATH "$HOME/Code/go"
+set PATH $PATH "$GOPATH/bin"
+
 # Set my editors to Atom
 # setenv EDITOR "atom -w"
 # setenv VISUAL "atom -w"
 # setenv PAGER "most"
+
+# Git Prompt
+#####
 
 # Git prompt options
 set -g __fish_git_prompt_showstashstate true
@@ -91,6 +101,7 @@ set -g __fish_git_prompt_color_upstream_behind violet
 set -g __fish_git_prompt_color_cleanstate green --bold
 
 # Aliases
+#########
 
 # Rehash fish configs quickly - doesn't truly reload, launches a new shell, but results the same
 alias reload 'exec fish -l'
