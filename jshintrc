@@ -9,7 +9,6 @@
   "devel"        : true,
   "eqeqeq"       : true,
   "eqnull"       : false,
-  "es5"          : true,
   "evil"         : false,
   "expr"         : false,
   "forin"        : false,
