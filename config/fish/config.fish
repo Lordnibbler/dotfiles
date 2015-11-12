@@ -68,6 +68,8 @@ if not set -q paradox_old_rbenv
   . (rbenv init -|psub)
 end
 
+set fish_complete_path ~/.config/fish/completions/ /usr/local/share/fish/completions/ /usr/local/share/fish/vendor_completions.d/ $fish_complete_path
+
 # add binaries in ./bundle to $PATH, eliminating need for bundle exec
 set PATH ./.bundle/bin $PATH
 
