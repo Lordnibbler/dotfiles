@@ -82,12 +82,12 @@ set -x GOPATH "$HOME/Code/go"
 set PATH $PATH "$GOPATH/bin"
 
 # Set my editors to Atom
-# setenv EDITOR "atom -w"
-# setenv VISUAL "atom -w"
+setenv EDITOR "atom -w"
+setenv VISUAL "atom -w"
 # setenv PAGER "most"
 
 # Git Prompt
-#####
+############
 
 # Git prompt options
 set -g __fish_git_prompt_showstashstate true
