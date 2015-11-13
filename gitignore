@@ -3,4 +3,9 @@
 *.ignore
 *.un~
 *.zshc
+
+# ruby/rails bundled gems
 vendor/bundler
+
+# ctags files
+.tags*

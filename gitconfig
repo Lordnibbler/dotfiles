@@ -62,6 +62,7 @@
 
   # Hub gem
   pr = pull-request
+  ctags = !.git/hooks/ctags
 [color]
   ui = auto
 [color "branch"]
@@ -83,7 +84,7 @@
   whitespace = red reverse
 [core]
   whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
-	excludesfile = ~/.gitignore
+  excludesfile = ~/.gitignore
 [apply]
     whitespace = fix
 [branch]
@@ -106,3 +107,5 @@
   prompt = false
 [merge]
   tool = Kaleidoscope
+[init]
+  templatedir = ~/.dotfiles/git_template
