@@ -133,4 +133,7 @@ if not set -q __prompt_initialized_2
   set -U __prompt_initialized_2
 end
 
+# autojump for faster filesystem navigation
+[ -f /usr/local/share/autojump/autojump.fish ]; and source /usr/local/share/autojump/autojump.fish
+
 source ~/.config/fish/fundle_config.fish
