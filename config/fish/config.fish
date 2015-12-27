@@ -1,3 +1,9 @@
+# fundle packages
+fundle plugin 'edc/bass'
+fundle plugin 'tuvistavie/fish-fastdir'
+
+fundle init
+
 # use bass to source the bash nvm script
 bass source ~/.nvm/nvm.sh
 
@@ -120,9 +126,6 @@ alias rk "rake"
 alias rb "ruby"
 
 # Shell/filesystem
-alias .. "cd ../"
-alias ... "cd ../../"
-alias .... "cd ../../../"
 alias dotf "cd $HOME/.dotfiles"
 
 # Run something in the latest version of ruby
