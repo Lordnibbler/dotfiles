@@ -1,15 +1,3 @@
-# fundle packages
-fundle plugin 'edc/bass'
-fundle plugin 'tuvistavie/fish-fastdir'
-
-fundle init
-
-# use bass to source the bash nvm script
-bass source ~/.nvm/nvm.sh
-
-# If you don't want to run the head version of rbenv, uncomment this line
-# set paradox_old_rbenv true
-
 # Fish colors and escape codes
 ##############################
 set fish_color_autosuggestion 808080
@@ -68,11 +56,9 @@ end
 set PATH $HOME/.rbenv/bin $PATH
 set PATH $HOME/.bin $PATH
 
-if not set -q paradox_old_rbenv
-  # Use rbenv's native fish support
-  # NOTE: This is only in HEAD of rbenv as of this date (2014/09/02)
-  . (rbenv init -|psub)
-end
+# Use rbenv's native fish support
+# NOTE: This is only in 1.0.0+ version of rbenv
+. (rbenv init -|psub)
 
 set fish_complete_path ~/.config/fish/completions/ /usr/local/share/fish/completions/ /usr/local/share/fish/vendor_completions.d/ $fish_complete_path
 
@@ -118,6 +104,7 @@ alias reload 'exec fish -l'
 # Hub is a useful tool that provides github integration.
 alias git hub
 alias g hub
+alias gcm="git commit -m"
 
 # Ruby
 alias b "bundle"
@@ -145,3 +132,5 @@ if not set -q __prompt_initialized_2
   set -U fish_color_splitter red
   set -U __prompt_initialized_2
 end
+
+source ~/.config/fish/fundle_config.fish
