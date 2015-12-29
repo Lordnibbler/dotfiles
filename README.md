@@ -28,48 +28,40 @@ Follow these instructions to get Fish set as the default shell:
   brew update; brew install fish nvm
   ```
 
-2. Install [`bass`](https://github.com/edc/bass) so you can use bash-specific logic (ie. for nvm)
-  ```sh
-    git clone git@github.com:edc/bass.git
-    cd bass; make install
-    rm -rf bass
-  ```
+1. Open a completely new terminal session and launch fish by typing `fish` and pressing enter
 
-3. Open a completely new terminal session and launch fish by typing `fish` and pressing enter
-
-4. If you see the following error, you need to upgrade to the `HEAD` version of rbenv for native fish support (this is not available in 0.4.0)
+1. If you see the following error, you need to upgrade to rbenv 1.0.0+ for native fish support
 
   ```sh
   # if you see this error:
   # 'case' builtin not inside of switch block (line 10): case "$command"
 
   # upgrade to HEAD rbenv
-  brew upgrade --HEAD rbenv
+  brew upgrade rbenv
 
   # then reload fish
   reload
   ```
 
-5. `chsh` to fish (changes default shell on OS X/Linux)
+  1. Bundle the `fundle` dependencies (like Bass for bash shell script support)
+  ```sh
+  fundle install
+
+  # then reload
+  reload
+
+  # if you see a git error, la ~/.dotfiles/config/fish/fundle/edc/bass/
+  # and ensure fundle properly cloned the dependencies. if dir is empty,
+  # remove it and run `fundle install` again
+  ```
+
+1. `chsh` to fish (changes default shell on OS X/Linux)
   ```sh
   echo $(which fish) | sudo tee -a /etc/shells
   chsh -s $(which fish)
   ```
 
-6. If you use iTerm2, you can change your color scheme. [Simply download a scheme](https://github.com/mbadolato/iTerm2-Color-Schemes/tree/master/schemes). Then, go to Preferences > Profiles > Colors Tab > Load Presets, and choose a `.itermcolors` file.
-
-7. *Optionally*, you can install [oh my fish](https://github.com/bpinto/oh-my-fish) if you don't like my customizations.
-
-### ZSH
-
-1. Install ZSH
-
-  ```sh
-  brew update; brew install zsh
-  ```
-
-2. Install [oh my zsh](https://github.com/robbyrussell/oh-my-zsh#basic-installation)
-If you plan to use ZSH, I install oh my zsh as my `.zshrc` already has this configured.
+1. If you use iTerm2, you can change your color scheme. [Simply download a scheme](https://github.com/mbadolato/iTerm2-Color-Schemes/tree/master/schemes). Then, go to Preferences > Profiles > Colors Tab > Load Presets, and choose a `.itermcolors` file.
 
 ### Forking
 
