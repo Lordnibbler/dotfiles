@@ -10,8 +10,8 @@ set fish_color_quote cyan\x1e--bold
 set fish_color_search_match magenta
 set fish_color_valid_path magenta\x1e--underline
 
-# Greeting on new terminal
-# set fish_greeting (date)
+# Disable greeting on new terminal
+set fish_greeting ''
 
 # Prepend sudo when Alt+S is keyed
 function prepend_sudo
