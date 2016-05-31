@@ -50,10 +50,7 @@ end
 
 # While you can use a single fish array to do this (space-separated list), this is easier to read
 set PATH /usr/local/bin /usr/local/sbin $PATH
-if set -q paradox_old_rbenv
-  set PATH $HOME/.rbenv/shims $PATH
-end
-set PATH $HOME/.rbenv/bin $PATH
+set PATH $HOME/.rbenv/shims $PATH
 set PATH $HOME/.bin $PATH
 
 # Use rbenv's native fish support
