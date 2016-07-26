@@ -47,15 +47,13 @@ end
 
 # Paths
 #######
-
-# While you can use a single fish array to do this (space-separated list), this is easier to read
-set PATH /usr/local/bin /usr/local/sbin $PATH
-set PATH $HOME/.rbenv/shims $PATH
-set PATH $HOME/.bin $PATH
-
 # Use rbenv's native fish support
 # NOTE: This is only in 1.0.0+ version of rbenv
 . (rbenv init -|psub)
+
+# While you can use a single fish array to do this (space-separated list), this is easier to read
+set PATH /usr/local/bin /usr/local/sbin $PATH
+set PATH $HOME/.bin $PATH
 
 set fish_complete_path ~/.config/fish/completions/ /usr/local/share/fish/completions/ /usr/local/share/fish/vendor_completions.d/ $fish_complete_path
 
