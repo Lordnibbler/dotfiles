@@ -68,8 +68,8 @@ set -x GOPATH "$HOME/Code/go"
 set PATH $PATH "$GOPATH/bin"
 
 # Set my editors to Atom
-setenv EDITOR "atom -w"
-setenv VISUAL "atom -w"
+setenv EDITOR "vim"
+setenv VISUAL "vim"
 # setenv PAGER "most"
 
 # Git Prompt
