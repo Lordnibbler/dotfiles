@@ -14,7 +14,7 @@
   br = branch
   df = diff
   cp = cherry-pick
-  fp = push -f
+  fp = push --force-with-lease
   recommit = commit --amend -CHEAD
   reci = commit --amend -CHEAD
   staged  = diff --cached
