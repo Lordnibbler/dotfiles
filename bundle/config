@@ -1,2 +1,3 @@
+---
 BUNDLE_BIN: ".bundle/bin"
 BUNDLE_PATH: vendor/bundler

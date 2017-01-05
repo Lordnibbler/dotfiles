@@ -2,4 +2,5 @@
 config/hub
 
 # ignore fish history
-config/fish/fish*
+config/fish/fish_history
+config/fish/fishd*

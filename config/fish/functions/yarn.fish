@@ -1,0 +1,1 @@
+/Users/mac10071/.config/fisherman/nvm/yarn.fish
