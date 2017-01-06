@@ -1,3 +1,1 @@
-function nvm
-  bass source /usr/local/opt/nvm/nvm.sh ';' nvm $argv
-end
+/Users/mac10071/.config/fisherman/nvm/nvm.fish

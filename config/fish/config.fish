@@ -67,11 +67,6 @@ set PATH ./bin $PATH
 set -x GOPATH "$HOME/Code/go"
 set PATH $PATH "$GOPATH/bin"
 
-# Set my editors to Atom
-setenv EDITOR "vim"
-setenv VISUAL "vim"
-# setenv PAGER "most"
-
 # Git Prompt
 ############
 
@@ -96,7 +91,6 @@ alias reload 'exec fish -l'
 # Hub is a useful tool that provides github integration.
 alias git hub
 alias g hub
-alias gcm="git commit -m"
 
 # Ruby
 alias b "bundle"
@@ -131,4 +125,5 @@ end
 # autojump for faster filesystem navigation
 [ -f /usr/local/share/autojump/autojump.fish ]; and source /usr/local/share/autojump/autojump.fish
 
-source ~/.config/fish/fundle_config.fish
+# source .nvmrc on shell load
+nvm use
