@@ -57,6 +57,12 @@ set PATH $HOME/.bin $PATH
 
 set fish_complete_path ~/.config/fish/completions/ /usr/local/share/fish/completions/ /usr/local/share/fish/vendor_completions.d/ $fish_complete_path
 
+# use a custom directory for fisherman install
+set fish_path ~/.dotfiles/config/fish/fisherman
+
+# add fisherman dir to fish_function_path
+set fish_function_path ~/.config/fish/fisherman/functions $fish_function_path
+
 # add binaries in ./bundle to $PATH, eliminating need for bundle exec
 set PATH ./.bundle/bin $PATH
 
@@ -66,11 +72,6 @@ set PATH ./bin $PATH
 # add $GOPATH to $PATH (necessary if you will use golang)
 set -x GOPATH "$HOME/Code/go"
 set PATH $PATH "$GOPATH/bin"
-
-# Set my editors to Atom
-setenv EDITOR "vim"
-setenv VISUAL "vim"
-# setenv PAGER "most"
 
 # Git Prompt
 ############
@@ -131,4 +132,6 @@ end
 # autojump for faster filesystem navigation
 [ -f /usr/local/share/autojump/autojump.fish ]; and source /usr/local/share/autojump/autojump.fish
 
-source ~/.config/fish/fundle_config.fish
+# hack; load ~/.nvmrc version of node
+# remove/fix when https://github.com/fisherman/nvm/issues/11 is resolved
+nvm use

@@ -43,16 +43,12 @@ Follow these instructions to get Fish set as the default shell:
   reload
   ```
 
-  1. Bundle the `fundle` dependencies (like Bass for bash shell script support)
+  1. Bundle the `fisherman` dependencies (like Bass for bash shell script support)
   ```sh
-  fundle install
+  fisher
 
   # then reload
   reload
-
-  # if you see a git error, la ~/.dotfiles/config/fish/fundle/edc/bass/
-  # and ensure fundle properly cloned the dependencies. if dir is empty,
-  # remove it and run `fundle install` again
   ```
 
 1. `chsh` to fish (changes default shell on OS X/Linux)
