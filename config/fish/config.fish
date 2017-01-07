@@ -131,3 +131,6 @@ end
 # autojump for faster filesystem navigation
 [ -f /usr/local/share/autojump/autojump.fish ]; and source /usr/local/share/autojump/autojump.fish
 
+# hack; load ~/.nvmrc version of node
+# remove/fix when https://github.com/fisherman/nvm/issues/11 is resolved
+nvm use
