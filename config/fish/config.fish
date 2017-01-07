@@ -57,6 +57,12 @@ set PATH $HOME/.bin $PATH
 
 set fish_complete_path ~/.config/fish/completions/ /usr/local/share/fish/completions/ /usr/local/share/fish/vendor_completions.d/ $fish_complete_path
 
+# use a custom directory for fisherman install
+set fish_path ~/.dotfiles/config/fish/fisherman
+
+# add fisherman dir to fish_function_path
+set fish_function_path ~/.config/fish/fisherman/functions $fish_function_path
+
 # add binaries in ./bundle to $PATH, eliminating need for bundle exec
 set PATH ./.bundle/bin $PATH
 
