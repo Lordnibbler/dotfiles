@@ -1,6 +1,7 @@
 [user]
   name = Ben Radler
-  email = benradler@me.com
+  email = ben@benradler.com
+  signingkey = E74A08D2
 [github]
   user  = lordnibbler
   token = GithubToken
@@ -111,3 +112,7 @@
   templatedir = ~/.dotfiles/git_template
 [gc]
   pruneExpire = 12 hours ago
+[gpg]
+	program = gpg2
+[commit]
+	gpgsign = true
