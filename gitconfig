@@ -52,8 +52,8 @@
   incoming = "!f() { T=$( [ \"${1}\" == \"\" ] && echo $(git current-track) || echo ${1} ) && git log ..${T} $@; }; f"
   outgoing = "!f() { T=$( [ \"${1}\" == \"\" ] && echo $(git current-track) || echo ${1} ) && git log ${T}.. $@; }; f"
 
-  # delete all local branches merged into master, develop, master_newui
-  cleanup = "!git branch --merged | grep  -v '\\*\\|master\\|develop\\|master_newui' | xargs -n 1 git branch -d"
+  # delete all local branches merged into master, develop
+  cleanup = "!git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d"
 
   # list branches not merged into currently checked out branch
   wip = branch --no-merged
