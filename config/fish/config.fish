@@ -69,10 +69,6 @@ set PATH ./.bundle/bin $PATH
 # Add rails 4 project-specific binstubs to $PATH
 set PATH ./bin $PATH
 
-# add $GOPATH to $PATH (necessary if you will use golang)
-set -x GOPATH "$HOME/Code/go"
-set PATH $PATH "$GOPATH/bin"
-
 # Git Prompt
 ############
 
