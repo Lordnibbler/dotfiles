@@ -110,8 +110,6 @@
   tool = Kaleidoscope
 [init]
   templatedir = ~/.dotfiles/git_template
-[gc]
-  pruneExpire = 12 hours ago
 [gpg]
 	program = gpg2
 [commit]
