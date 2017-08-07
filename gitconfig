@@ -55,6 +55,9 @@
   # delete all local branches merged into master, develop
   cleanup = "!git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d"
 
+  # delete ALL local branches, merged or not
+  cleanupall = "!git branch | xargs -n 1 | grep -v master | grep -v "*" | xargs -n 1 git branch -D"
+
   # list branches not merged into currently checked out branch
   wip = branch --no-merged
 
