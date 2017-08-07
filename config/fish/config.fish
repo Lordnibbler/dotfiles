@@ -93,7 +93,6 @@ alias reload 'exec fish -l'
 # Hub is a useful tool that provides github integration.
 alias git hub
 alias g hub
-alias gcm="git commit -m"
 
 # Ruby
 alias b "bundle"
