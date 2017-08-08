@@ -10,3 +10,5 @@ bundle/cache
 
 # ctags files
 .tags*
+
+.pdbrc
