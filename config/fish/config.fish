@@ -130,3 +130,10 @@ end
 # hack; load ~/.nvmrc version of node
 # remove/fix when https://github.com/fisherman/nvm/issues/11 is resolved
 nvm use
+
+# go
+set -x GOPATH $HOME/go
+set -x PATH $PATH /usr/local/go/bin $GOPATH/bin
+
+# virtualfish
+eval (python -m virtualfish)
