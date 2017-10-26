@@ -12,3 +12,5 @@ bundle/cache
 .tags*
 
 .pdbrc
+
+lyft_venv
