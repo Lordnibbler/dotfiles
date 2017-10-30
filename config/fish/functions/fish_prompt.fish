@@ -28,5 +28,6 @@ function fish_prompt --description 'Write out the prompt'
 
   end
 
-  echo -s "$__paradox_prompt_cwd" (prompt_pwd) (__fish_git_prompt) (set_color 00adeb) (paradox_git_hash) "$__paradox_prompt_normal" "$prompt_status" " $__paradox_prompt_delim"
+  echo -s "$__paradox_prompt_cwd" (prompt_pwd) (__fish_git_prompt) (set_color 00adeb) (paradox_git_hash) "$__paradox_prompt_normal" "$prompt_status"
+  echo "$__paradox_prompt_delim"
 end
