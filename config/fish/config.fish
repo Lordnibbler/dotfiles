@@ -83,6 +83,14 @@ set -g __fish_git_prompt_color_upstream_ahead red
 set -g __fish_git_prompt_color_upstream_behind violet
 set -g __fish_git_prompt_color_cleanstate green --bold
 
+# E2E test env vars
+###################
+set -gx RENTALS_URL http://rentals-legacy-benradler-onebox.dev.lyft.net
+set -gx ATS_URL http://ats-legacy-benradler-onebox.dev.lyft.net
+set -gx LYFT_COM_URL http://www-benradler-onebox.dev.lyft.net
+set -gx E2E_BASE_URL http://www-benradler-onebox.dev.lyft.net
+set -gx USE_MAC true
+
 # Aliases
 #########
 
