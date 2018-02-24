@@ -121,6 +121,14 @@ alias pgstop "pg_ctl -D /usr/local/var/postgres stop -s -m fast"
 # todo.sh
 alias t "todo.sh"
 
+# rentals docker
+alias ml "control enter rentals.legacy make lint"
+alias mtu "control enter rentals.legacy make test_unit"
+alias mt "control enter rentals.legacy make typecheck"
+alias mf "control enter rentals.legacy make format"
+alias mi "control enter rentals.legacy make inspect"
+alias t "control enter rentals.legacy service_venv py.test"
+
 # initialize our new variables
 # in theory this would be in a fish_prompt event, but this file isn't sourced
 # until the fish_prompt function is called anyway.
