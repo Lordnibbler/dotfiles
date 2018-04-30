@@ -152,4 +152,6 @@ set -x GOPATH $HOME/go
 set -x PATH $PATH /usr/local/go/bin $GOPATH/bin
 
 # virtualfish
-eval (python -m virtualfish)
+eval (python3 -m virtualfish)
+
+status --is-interactive; and source (rbenv init -|psub)
