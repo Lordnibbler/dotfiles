@@ -127,7 +127,7 @@ alias mtu "control enter rentals.legacy make test_unit"
 alias mt "control enter rentals.legacy make typecheck"
 alias mf "control enter rentals.legacy make format"
 alias mi "control enter rentals.legacy make inspect"
-alias t "control enter rentals.legacy service_venv py.test"
+alias pt "control enter rentals.legacy service_venv py.test -s"
 
 # initialize our new variables
 # in theory this would be in a fish_prompt event, but this file isn't sourced
