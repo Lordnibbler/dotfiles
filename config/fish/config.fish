@@ -19,30 +19,29 @@ function prepend_sudo
   commandline "sudo $current_command"
 end
 
-# Prepend bx (bundle exec) when Alt+X is keyed
-function prepend_bundle_exec
+# Prepend service_venv when Ctrl+S is keyed
+function prepend_service_venv
   set current_command (commandline)
-  commandline "bx $current_command"
+  commandline "service_venv $current_command"
 end
 
-# Prepend g (git) when Alt+G is keyed
-function prepend_git
+# Prepend pytest when Ctrl+T is keyed
+function prepend_pytest
   set current_command (commandline)
-  commandline "g $current_command"
+  commandline "service_venv pytest -s $current_command"
 end
 
-# Prepend rbl (rbenv latest ) when Alt+R is keyed
-function prepend_rbl
+function wrap_control_enter
   set current_command (commandline)
-  commandline "rbl $current_command"
+  commandline "control enter $current_command.legacy"
 end
 
 # Actually bind the keys mentioned above
 function fish_user_key_bindings
+  bind \cs prepend_service_venv
+  bind \ct prepend_pytest
   bind \es prepend_sudo
-  bind \ex prepend_bundle_exec
-  bind \eg prepend_git
-  bind \er prepend_rbl
+  bind \ce wrap_control_enter
 end
 
 # Paths
@@ -88,8 +87,18 @@ set -g __fish_git_prompt_color_cleanstate green --bold
 set -gx RENTALS_URL http://rentals-legacy-benradler-onebox.dev.lyft.net
 set -gx ATS_URL http://ats-legacy-benradler-onebox.dev.lyft.net
 set -gx LYFT_COM_URL http://www-benradler-onebox.dev.lyft.net
+set -gx TOM_URL http://tom-benradler-onebox.dev.lyft.net
 set -gx E2E_BASE_URL http://www-benradler-onebox.dev.lyft.net
+set -gx HOST_SERVICE_NAME onebox
+set -gx ONEBOX_NAME benradler
+set -gx SERVICE_NAME expressdriveint
+set -gx SERVICE_REPO_NAME expressdriveint
 set -gx USE_MAC true
+
+# nvm
+#####
+# set -gx NVM_DIR "~/.nvm"
+set -g fish_user_paths "/usr/local/opt/node@8/bin" $fish_user_paths
 
 # Aliases
 #########
