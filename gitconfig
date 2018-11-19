@@ -1,6 +1,6 @@
 [user]
-  name = Ben Radler
-  email = bradler@lyft.com
+	name = Ben Radler
+	email = bradler@lyft.com
   # signingkey = E74A08D2
 [github]
   user  = lordnibbler
@@ -120,3 +120,5 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[url "git@github.com:"]
+	insteadOf = https://github.com/
