@@ -41,7 +41,7 @@ function fish_user_key_bindings
   bind \cs prepend_service_venv
   bind \ct prepend_pytest
   bind \es prepend_sudo
-  bind \ce wrap_control_enter
+  bind \cn wrap_control_enter
 end
 
 # Paths
