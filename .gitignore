@@ -8,3 +8,6 @@ config/fish/fishd.*
 # ignore fisherman dir
 config/fish/fisherman
 config/fisherman
+
+# ignore yarn dependencies
+config/yarn/global
