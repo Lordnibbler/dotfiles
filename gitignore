@@ -13,4 +13,8 @@ bundle/cache
 
 .pdbrc
 
+# lyft_venv
 lyft_venv
+/venv*
+.activate.sh
+.deactivate.sh
