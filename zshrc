@@ -10,6 +10,10 @@ export ZSH="/Users/benradler/.oh-my-zsh"
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="spaceship"
 
+# spaceship-prompt customizations
+SPACESHIP_CHAR_SYMBOL=$
+SPACESHIP_CHAR_SUFFIX=\
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
@@ -68,7 +72,7 @@ ZSH_THEME="spaceship"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions)
+plugins=(git zsh-autosuggestions fzf)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -94,9 +98,7 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+# Aliases
 alias reload="source ~/.zshrc"
 alias dotf="cd ~/.dotfiles"
 alias g="git"
@@ -104,17 +106,11 @@ alias g="git"
 # make hub and git commands one and the same
 eval "$(hub alias -s)"
 
-#
 # aactivator + lyftvenv
 eval "$(/lyft/brew/bin/aactivator init)"
 
-# spaceship-prompt customizations
-SPACESHIP_CHAR_SYMBOL=$ 
-SPACESHIP_CHAR_SUFFIX=\ 
-
-
 # custom functions
-# Define the shell function.
+# Define lyft cd function function.
 lyft(){
   cd ~/src/"${1:-}"
 }
