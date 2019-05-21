@@ -118,3 +118,8 @@ lyft(){
 # Tell zsh to autocomplete directory names in the same directory as
 # the function's when typing a command based on the shell function.
 compctl -/ -W ~/src lyft
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
