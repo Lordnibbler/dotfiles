@@ -19,7 +19,7 @@ vi ~/.gitconfig
 
 ```sh
 # install homebrew files from brewfile
-brew bundle
+cd ~/.dotfiles && brew bundle
 ```
 
 If you use iTerm2, you can change your color scheme. [Simply download a scheme](https://github.com/mbadolato/iTerm2-Color-Schemes/tree/master/schemes). Then, go to Preferences > Profiles > Colors Tab > Load Presets, and choose a `.itermcolors` file.
