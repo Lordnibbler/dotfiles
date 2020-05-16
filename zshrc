@@ -1,8 +1,12 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=./.bundle/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/imac/.oh-my-zsh"
+
+# Set fzf installation directory path
+export FZF_BASE=/usr/local/bin/fzf
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -73,7 +77,11 @@ SPACESHIP_CHAR_SUFFIX=\
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions)
+plugins=(
+  git
+  zsh-autosuggestions
+  fzf
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -103,6 +111,13 @@ alias reload="source ~/.zshrc"
 alias dotf="cd ~/.dotfiles"
 alias g="git"
 
+alias bx="bundle exec"
+
 # make hub and git commands one and the same
 eval "$(hub alias -s)"
 
+# rbenv setup
+eval "$(rbenv init -)"
+
+# for rails binstubs
+export PATH=./bin:$PATH
