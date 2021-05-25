@@ -111,6 +111,7 @@ alias reload="source ~/.zshrc"
 alias dotf="cd ~/.dotfiles"
 alias g="git"
 
+alias b="bundle"
 alias bx="bundle exec"
 
 # make hub and git commands one and the same
