@@ -1,7 +1,6 @@
 [user]
-	name = Ben Radler
-	email = bradler@lyft.com
-  # signingkey = E74A08D2
+  name = Ben Radler
+  email = bradler@lyft.com
 [github]
   user  = lordnibbler
   token = GithubToken
@@ -113,8 +112,6 @@
   tool = Kaleidoscope
 [init]
   templatedir = ~/.dotfiles/git_template
-[gpg]
-	program = gpg2
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
