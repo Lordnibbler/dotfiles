@@ -47,7 +47,7 @@ rm -rf fonts
 
 Then, switch iTerm's font to "Fira Code"
 
-If you use iTerm2, you can change your color scheme. [Simply download a scheme](https://github.com/mbadolato/iTerm2-Color-Schemes/tree/master/schemes). Then, go to Preferences > Profiles > Colors Tab > Load Presets, and choose a `.itermcolors` file.
+Change the iTerm2 color scheme. [Simply download a scheme](https://github.com/mbadolato/iTerm2-Color-Schemes/tree/master/schemes). Then, go to Preferences > Profiles > Colors Tab > Load Presets, and choose a `.itermcolors` file.I prefer the "monokai soda" scheme.
 
 ### Forking
 
