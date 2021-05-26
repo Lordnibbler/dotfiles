@@ -166,3 +166,6 @@ PATH=$PATH:/Users/benradler/.lyftkube-bin
 # These variables were added by 'hacktools/set_go_env_vars.sh'
 export GOPROXY='https://athens.ingress.infra.us-east-1.k8s.lyft.net'
 export GONOSUMDB='github.com/lyft/*,github.lyft.net/*'
+
+# rbenv
+eval "$(rbenv init -)"
