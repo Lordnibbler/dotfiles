@@ -18,3 +18,4 @@ lyft_venv
 /venv*
 .activate.sh
 .deactivate.sh
+.idea

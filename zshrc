@@ -14,11 +14,13 @@ ZSH_THEME="spaceship"
 SPACESHIP_CHAR_SYMBOL=$
 SPACESHIP_CHAR_SUFFIX=\
 
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+export PATH=./.bundle/bin:$PATH
+
+# Path to your oh-my-zsh installation.
+export ZSH="/Users/ben/.oh-my-zsh"
+
+# Set fzf installation directory path
+export FZF_BASE=/usr/local/bin/fzf
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -73,6 +75,11 @@ SPACESHIP_CHAR_SUFFIX=\
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git zsh-autosuggestions fzf)
+plugins=(
+  git
+  zsh-autosuggestions
+  fzf
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -126,3 +133,15 @@ export NVM_DIR="$HOME/.nvm"
 
 # pyenv
 eval "$(pyenv init -)"
+
+alias b="bundle"
+alias bx="bundle exec"
+
+# make hub and git commands one and the same
+eval "$(hub alias -s)"
+
+# rbenv setup
+eval "$(rbenv init -)"
+
+# for rails binstubs
+export PATH=./bin:$PATH

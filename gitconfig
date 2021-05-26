@@ -119,3 +119,5 @@
 	required = true
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+[gpg]
+	program = /usr/local/bin/gpg

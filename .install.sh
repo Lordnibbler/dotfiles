@@ -13,5 +13,10 @@ for f in *; do
     continue
   fi
 
+  # Don't link install the brewfile :)
+  if [[ "${BASE}" == "brewfile" ]]; then
+    continue
+  fi
+
   ln -sin "${CWD}/${BASE}" "${HOME}/.${BASE}"
 done

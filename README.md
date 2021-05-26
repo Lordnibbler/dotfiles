@@ -17,47 +17,37 @@ cd ~/.dotfiles && .install.sh
 vi ~/.gitconfig
 ```
 
-### Fish Shell
+```sh
+# install homebrew files from brewfile
+cd ~/.dotfiles && brew bundle
+```
 
-If you plan to use [fish shell](http://fishshell.com/), there are a lot of nice configurations already in `/config/fish`.
+Install spaceship prompt:
 
-Follow these instructions to get Fish set as the default shell:
+```sh
+git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
+ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
+```
 
-1. Install Fish (and optionally, nvm -- you'll need node for my `fish_right_prompt`)
-    ```sh
-    brew update; brew install fish nvm
-    ```
+Install zsh-autosuggestions
 
-1. Open a completely new terminal session and launch fish by typing `fish` and pressing enter
+```sh
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+```
 
-1. If you see the following error, you need to upgrade to rbenv 1.0.0+ for native fish support
+Install powerline fonts
 
-    ```sh
-    # if you see this error:
-    # 'case' builtin not inside of switch block (line 10): case "$command"
+```sh
+git clone https://github.com/powerline/fonts.git --depth=1
+cd fonts
+./install.sh
+cd ..
+rm -rf fonts
+```
 
-    # upgrade to HEAD rbenv
-    brew upgrade rbenv
+Then, switch iTerm's font to "Fira Code"
 
-    # then reload fish
-    reload
-    ```
-
-1. Bundle the `fisherman` dependencies (like Bass for bash shell script support)
-    ```sh
-    fisher
-
-    # then reload
-    reload
-    ```
-
-1. `chsh` to fish (changes default shell on OS X/Linux)
-    ```sh
-    echo $(which fish) | sudo tee -a /etc/shells
-    chsh -s $(which fish)
-    ```
-
-1. If you use iTerm2, you can change your color scheme. [Simply download a scheme](https://github.com/mbadolato/iTerm2-Color-Schemes/tree/master/schemes). Then, go to Preferences > Profiles > Colors Tab > Load Presets, and choose a `.itermcolors` file.
+Change the iTerm2 color scheme. [Simply download a scheme](https://github.com/mbadolato/iTerm2-Color-Schemes/tree/master/schemes). Then, go to Preferences > Profiles > Colors Tab > Load Presets, and choose a `.itermcolors` file.I prefer the "monokai soda" scheme.
 
 ### Forking
 
