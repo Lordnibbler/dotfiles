@@ -169,3 +169,6 @@ export GONOSUMDB='github.com/lyft/*,github.lyft.net/*'
 
 # rbenv
 eval "$(rbenv init -)"
+
+# for hub HTTPS (https://github.com/github/hub/issues/1644#issuecomment-359563609)
+export GITHUB_TOKEN=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
