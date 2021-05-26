@@ -170,3 +170,6 @@ export GONOSUMDB='github.com/lyft/*,github.lyft.net/*'
 # simulatedrides local dev
 export CREDENTIALS_SIMULATEDRIDES_PUBLICAPI_CLIENT_ID=PkJgKhfQ40Kk
 export CREDENTIALS_SIMULATEDRIDES_PUBLICAPI_CLIENT_SECRET=zAIP-dQB5Hq3OdFGUpASYVwvnBSFrr1z
+
+# rbenv
+eval "$(rbenv init -)"
