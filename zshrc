@@ -166,3 +166,7 @@ PATH=$PATH:/Users/benradler/.lyftkube-bin
 # These variables were added by 'hacktools/set_go_env_vars.sh'
 export GOPROXY='https://athens.ingress.infra.us-east-1.k8s.lyft.net'
 export GONOSUMDB='github.com/lyft/*,github.lyft.net/*'
+
+# simulatedrides local dev
+export CREDENTIALS_SIMULATEDRIDES_PUBLICAPI_CLIENT_ID=PkJgKhfQ40Kk
+export CREDENTIALS_SIMULATEDRIDES_PUBLICAPI_CLIENT_SECRET=zAIP-dQB5Hq3OdFGUpASYVwvnBSFrr1z
