@@ -12,7 +12,7 @@ ZSH_THEME="spaceship"
 
 # spaceship-prompt customizations
 SPACESHIP_CHAR_SYMBOL=$
-SPACESHIP_CHAR_SUFFIX=\
+SPACESHIP_CHAR_SUFFIX=\ 
 
 export PATH=./.bundle/bin:$PATH
 
