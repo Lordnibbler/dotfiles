@@ -153,3 +153,16 @@ eval "$(rbenv init -)"
 
 # for rails binstubs
 export PATH=./bin:$PATH
+
+# lyftkube path
+PATH=$PATH:/Users/bradler/.lyftkube-bin
+
+# go path
+export GOPATH=~/go
+export PATH=$GOPATH/bin:$PATH
+PATH=$PATH:/Users/benradler/.lyftkube-bin
+
+# Add support for Go modules and Lyft's Athens module proxy/store
+# These variables were added by 'hacktools/set_go_env_vars.sh'
+export GOPROXY='https://athens.ingress.infra.us-east-1.k8s.lyft.net'
+export GONOSUMDB='github.com/lyft/*,github.lyft.net/*'
