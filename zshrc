@@ -111,7 +111,7 @@ alias g="git"
 eval "$(hub alias -s)"
 
 # aactivator + lyftvenv
-eval "$(/lyft/brew/bin/aactivator init)"
+eval "$(/opt/lyft/brew/bin/aactivator init)"
 
 # custom functions
 # Define lyft cd function function.
