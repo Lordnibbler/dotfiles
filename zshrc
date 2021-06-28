@@ -1,4 +1,8 @@
 # If you come from bash you might have to change your $PATH.
+
+# homebrew path
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=./.bundle/bin:$PATH
 
