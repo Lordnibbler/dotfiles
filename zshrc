@@ -1,3 +1,6 @@
+# brew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -170,5 +173,6 @@ export GONOSUMDB='github.com/lyft/*,github.lyft.net/*'
 # rbenv
 eval "$(rbenv init -)"
 
-# for hub HTTPS (https://github.com/github/hub/issues/1644#issuecomment-359563609)
-export GITHUB_TOKEN=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
+source '/Users/bradler/src/awsaccess/awsaccess2.sh' # awsaccess
+source '/Users/bradler/src/awsaccess/oktaawsaccess.sh' # oktaawsaccess
+export PS1="\$(ps1_mfa_context)$PS1" # awsaccess

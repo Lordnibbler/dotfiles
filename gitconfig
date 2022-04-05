@@ -1,6 +1,7 @@
 [user]
   name = Ben Radler
   email = bradler@lyft.com
+  signingkey = E74A08D2
 [github]
   user  = lordnibbler
   token = GithubToken
