@@ -22,6 +22,8 @@ vi ~/.gitconfig
 cd ~/.dotfiles && brew bundle
 ```
 
+[Install oh-my-zsh](https://ohmyz.sh/#install)
+
 Install spaceship prompt:
 
 ```sh
