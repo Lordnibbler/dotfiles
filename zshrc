@@ -139,3 +139,8 @@ eval "$(pyenv init -)"
 export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+# poppy auto completions
+# https://github.robot.car/cruise/poppy#3-post-installation-optional-setup
+autoload -U compinit && compinit
+if [ -x "$(which poppy)" ]; then source <(poppy completion zsh); fi

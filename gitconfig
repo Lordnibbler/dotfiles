@@ -1,9 +1,8 @@
 [user]
   name = Ben Radler
-  email = ben@benradler.com
-  signingkey = E74A08D2
+  email = ben.radler@getcruise.com
 [github]
-  user  = lordnibbler
+  user  = ben.radler
   token = GithubToken
 [alias]
   # basic aliases
@@ -113,7 +112,3 @@
   tool = Kaleidoscope
 [init]
   templatedir = ~/.dotfiles/git_template
-[gpg]
-	program = /opt/homebrew/bin/gpg
-[commit]
-	gpgsign = true
