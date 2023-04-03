@@ -144,3 +144,27 @@ export NVM_DIR="$HOME/.nvm"
 # https://github.robot.car/cruise/poppy#3-post-installation-optional-setup
 autoload -U compinit && compinit
 if [ -x "$(which poppy)" ]; then source <(poppy completion zsh); fi
+[[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/ben.radler/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ben.radler/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/ben.radler/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ben.radler/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+# FNM setup
+eval "$(fnm env --use-on-cd)"
+
+# gcloud homebrew setup
+source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+
+# k9s aliases
+alias auth="authcli"
+alias kdev="kubectx gke_cruise-paas-product-dev-2545_us-west1_paas-product-dev-us-west1"
+alias kstaging="kubectx gke_cruise-paas-product-stg-4368_us-west1_paas-product-staging-us-west1"
+alias kprod="kubectx gke_cruise-paas-product-prod-6e2b_us-west1_paas-product-prod-us-west1"
+alias kprodrnd="kubectx gke_paas-product-rnd-prod_us-west1_paas-product-rnd-prod-us-west1"
+alias k9dev="kdev && k9s -n dispatch"
+alias k9staging="kstaging && k9s -n dispatch"
+alias k9prod="kprod && k9s -n dispatch"
+alias k9prodrnd="kprodrnd && k9s -n dispatch"
