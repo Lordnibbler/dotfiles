@@ -135,11 +135,6 @@ eval "$(pyenv init --path)"
 
 eval "$(pyenv init -)"
 
-# NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-
 # homebrew config
 export HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=true
 
@@ -147,3 +142,7 @@ export HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=true
 # https://github.com/ged/ruby-pg/issues/538
 # https://github.com/rails/rails/issues/38560
 export PGGSSENCMODE="disable"
+
+# fnm
+export PATH="/Users/ben/Library/Application Support/fnm:$PATH"
+eval "$(fnm env --use-on-cd)"
